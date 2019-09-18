@@ -30,22 +30,16 @@ with open(fname_in, 'rt', encoding="ascii") as fin, open(fname_out, 'wt', encodi
 
 data_timeRemoved = pd.read_csv("your_finished_csv_file_points.csv" , sep =";")
 
-#print(data_timeRemoved.head())
 
 
 features = ['Variable1', 'Variable2', 'Variable3', 'Variable4', 'Variable5', 'Variable6', 'Variable7', 'Variable8', 'Variable9', 'Variable10', 'Variable11', 'Variable12', 'Variable13', 'Variable15', 'Variable16', 'Variable17', 'Variable18', 'Variable19', 'Variable20', 'Variable21', 'Variable22', 'Variable23', 'Variable24', 'Variable25', 'Variable26', 'Variable27', 'Variable28', 'Variable29', 'Variable30', 'Variable31', 'Variable32', 'Variable33', 'Variable34', 'Variable35', 'Variable36', 'Variable37', 'Variable38', 'Variable39', 'Variable40', 'Variable41', 'Variable42', 'Variable43', 'Energy', 'Variable44', 'Variable45', 'Variable46', 'Variable47'] 
 x = data_timeRemoved.loc[:, features].values
 
-hhhhhhhh = pd.DataFrame(data = x, columns = features)
-
-#print(hhhhhhhh['Energy'])
 
 
 x = StandardScaler().fit_transform(x)
 OriginalDataDf = pd.DataFrame(data = x, columns = features)
 #print(OriginalDataDf.head())
-
-
 
 
 pca = PCA(n_components=4)
@@ -100,7 +94,6 @@ OriginalDataDf['cluster'] = labels.tolist()
 finalDf = pd.concat([principalDf_2, OriginalDataDf[['cluster']]], axis = 1)
 #print(finalDf)
 
-"""
 fig = plt.figure(figsize = (8,8))
 ax = fig.add_subplot(1,1,1) 
 ax.set_xlabel('Principal Component 1', fontsize = 15)
@@ -118,7 +111,7 @@ for target, color in zip(targets,colors):
 ax.legend(targets)
 ax.grid()
 #plt.show()
-"""
+
 
 ###-------------------------------------------------------------------------###
 ###          Applying Decision Tree on the new data and plotting it         ###
@@ -263,13 +256,13 @@ for dfn in dataframes:
 
 plt.show()
 
-#######################################
-####                                           ####
-#### LR on the original data frame  hhhhhhhhhh ####
-####                                           ####
-#######################################
+##########################################################
+####                                                  ####
+#### LR on the original data frame  OriginalDataDf    ####
+####                                                  ####
+##########################################################
 dfn = pd.DataFrame()
-dfn = hhhhhhhh
+dfn = OriginalDataDf
 #print(dfn['Energy'])
 count = dfn.shape[0]
 nb = int(count * 0.2)
