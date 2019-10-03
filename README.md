@@ -18,13 +18,19 @@ to Variable47 and Energy. And it has 3844 instances. Also the names of the Varia
 
 :point_right: I started by removing the Rows Header and TimeStamp columns because they are irrelevant. Then I applied PCA, as a dimentionality-reduction algorithm, it allows us to plot the data to have a better idea about it. With the visualization as shown in the figure below we can see that there are 4 groups.
 
-![PCA](plots/PCA.PNG)
+<p align="center">
+  <img src="plots/PCA.PNG" width="500"/> 
+</p>
 
 :point_right: That’s why I applied K-means algorithm with k=4. Then I added a new column to the data that contains the number of the cluster for each instance. After that, I applied Decision Tree algorithm on the new data which results in the following figure.
 
-![DT](plots/DecisionTree.png)
+<p align="center">
+  <img src="plots/DecisionTree.png" width="600"/> 
+</p>
 
 :point_right: Finally that I have 4 clusters that actually represents 4 operational modes of the plant’s machines, I can apply the Linear Regression algorithm on each cluster to get its equation. The figure below shows the result.
 
-![LR](plots/LR.PNG)
+<p align="center">
+  <img src="plots/LR.PNG" width="500"/> 
+</p>
 
