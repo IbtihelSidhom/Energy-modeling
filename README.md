@@ -34,3 +34,10 @@ to Variable47 and Energy. And it has 3844 instances. Also the names of the Varia
   <img src="plots/LR.PNG" width="500"/> 
 </p>
 
+
+</br>
+</br>
+
+
+Made with :hearts: in summer :surfer: 2018.
+
