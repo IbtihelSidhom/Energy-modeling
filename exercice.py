@@ -32,7 +32,8 @@ data_timeRemoved = pd.read_csv("your_finished_csv_file_points.csv" , sep =";")
 
 
 
-features = ['Variable1', 'Variable2', 'Variable3', 'Variable4', 'Variable5', 'Variable6', 'Variable7', 'Variable8', 'Variable9', 'Variable10', 'Variable11', 'Variable12', 'Variable13', 'Variable15', 'Variable16', 'Variable17', 'Variable18', 'Variable19', 'Variable20', 'Variable21', 'Variable22', 'Variable23', 'Variable24', 'Variable25', 'Variable26', 'Variable27', 'Variable28', 'Variable29', 'Variable30', 'Variable31', 'Variable32', 'Variable33', 'Variable34', 'Variable35', 'Variable36', 'Variable37', 'Variable38', 'Variable39', 'Variable40', 'Variable41', 'Variable42', 'Variable43', 'Energy', 'Variable44', 'Variable45', 'Variable46', 'Variable47'] 
+NUM_VAR = 47
+features = ['Variable' + str(i + 1) for i in range(NUM_VAR)]
 x = data_timeRemoved.loc[:, features].values
 
 
