@@ -229,18 +229,9 @@ for dfn in dataframes:
 	# The coefficients
 	#print('Coefficients: \n', regr.coef_)
 
-	if dfNumber == 0 :
-		plt.subplot(221)
-
-	if dfNumber == 1 :
-		plt.subplot(222)
-
-	if dfNumber == 2 :
-		plt.subplot(223)
-
-	if dfNumber == 3 :
-		plt.subplot(224)
-
+	if dfNumber >= 0 and dfNumber <= 3:
+		plt.subplot(221 + dfNumber)
+		
 	plt.title('Cluster: ' + str(dfNumber))
 	plt.scatter(dfn_y_test, dfn_y_pred,  color='red', s = 4)
 	plt.plot(dfn_y_pred, dfn_y_pred, color='blue', linewidth=0.5)
