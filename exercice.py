@@ -182,12 +182,8 @@ def visualize_tree(tree, feature_names):
 ###-------------------------------------------------------------------------###
 
 # split OriginalDataDf into 4 dataframes by cluster value
-df0 = OriginalDataDf[OriginalDataDf['cluster'] == 0]
-df1 = OriginalDataDf[OriginalDataDf['cluster'] == 1]
-df2 = OriginalDataDf[OriginalDataDf['cluster'] == 2]
-df3 = OriginalDataDf[OriginalDataDf['cluster'] == 3]
 
-dataframes = [df0, df1, df2, df3]
+dataframes = [OriginalDataDf[OriginalDataDf['cluster'] == i] for i in range(4)] 
 dfNumber = 0
 
 for dfn in dataframes:
@@ -243,8 +239,7 @@ for dfn in dataframes:
 
 	plt.xlabel('Real Energy', fontsize = 8)
 	plt.ylabel('Predicted Energy', fontsize = 8)
-	dfNumber = dfNumber + 1
-
+	dfNumber += 1
 
 plt.show()
 
